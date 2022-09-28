@@ -12,9 +12,7 @@ def countSwaps(a):
             if (a[j] > a[j + 1]):
                 a[j], a[j + 1]= a[j+1],a[j]
                 sw +=1 
-            else:
-                a[j],a[j+1] =a[j],a[j+1]
-                sw=sw
+           
     print("Array is sorted in"+ " "+str(sw)+" "+"swaps.")
     print("First Element:" +" " +str( a[0] )) 
     print("Last Element:" + " "+str(a[n-1] ))
