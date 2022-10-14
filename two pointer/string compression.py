@@ -1,4 +1,4 @@
-lass Solution(object):
+class Solution(object):
     def compress(self, chars):
         i=index=0
         while i<len(chars):
