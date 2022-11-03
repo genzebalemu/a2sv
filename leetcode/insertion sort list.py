@@ -5,18 +5,19 @@ class ListNode(object):
         self.next = next
 class Solution(object):
     def insertionSortList(self, head):
-        newnode=ListNode(0)
+        newnode=ListNode(0,head)
         newnode.next =head
-        current=head
-        pre=newnode
+        prev,current=head,head.next
         while current:
-            if current.next and  current.val<current.next.val:
-                current=current.next
-            pop=current.next
-            current.next=current.next.next
+            if current.val>=prev.val:
+                prev,current=current,current.next
+                continue
             temp=newnode
-            while pop.val>temp.next.val:
+            while current.val >temp.next.val:
                 temp=temp.next
-            pop.next=temp.next
-            temp.next=pop
+            prev.next=current.next
+            current.next=temp.next
+            temp.next=current 
+            current=prev.next
         return newnode.next
+   
